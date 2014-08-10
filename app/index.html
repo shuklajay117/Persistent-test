@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>::Persistent::</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+
+<body ng-app="myApp">
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div id="page" class="main-container" ng-controller="MainCtrl">
+    <div id="logo">
+      <img src="img/logo.png" />
+    </div>
+
+    <div id="gallary" class="content-body">
+
+      <a class="prev cur-hand" data-ng-show="hasPrevious()" data-ng-click="previous()"></a>
+      <span class="prev" data-ng-hide="hasPrevious()"></span>
+
+      <div class="photo-container" data-carousel data-carousel-class="photo-carousel" data-on-page-upcoming="loadPage(page, tmplCb)" data-give-carousel-to="onCarouselAvailable(carousel)">
+        <div class="photo-grid span12">
+          <span data-ng-repeat="photo in photos" class="mrgn-rgt-15 gallary-img" ng-class="{'img-selected':photo.id == $parent.selectedImgId}">
+            <img ng-src="{{getPhotoUrl(photo)}}" ng-click="loadContents(photo)">
+          </span>
+        </div>
+      </div>
+
+      <a class="next cur-hand" data-ng-show="hasNext()" data-ng-click="next()"></a>
+      <span class="next" data-ng-hide="hasNext()"></span>
+    </div>
+    
+    <div class="img-desc-block">
+        <span class="font-bigger">{{imageDesc.title}}</span>
+        <p class="img-desc-txt">
+          {{imageDesc.desc}} 
+        </p>
+    </div>
+
+    <div class="margin-30">
+      <table class="font-smaller full-width">
+        <tr>
+          <td class="desc-form">
+            <table class="full-width">
+              <tr>
+                <td class="vheading-txt "><span class="heading-txt">Title</span></td>
+                <td><input class="input-text width-85per" type="text" ng-model="imgTitle" /></td>
+              </tr>
+              <tr>
+                <td class="vheading-txt v-top top-10"><span class="heading-txt table-desc-head">Description</span></td>
+                <td><textarea class="input-text table-desc-tarea" ng-model="imgDesc"></textarea></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><input class="update-btn" type="button" value="Update" ng-click="updateContents()" /></td>
+              </tr>
+            </table>
+          </td>
+          <td class="desc-table">
+            <table class="gridtable">
+                <thead>
+                  <tr>
+                    <td><span class="heading-txt">Title</span></td>
+                    <td><span class="heading-txt">Description</span></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-ng-repeat="photo in allPhotos" ng-class="{'selected-row':photo.id == $parent.selectedImgId}">
+                    <td><span>{{photo.contents.title}}</span></td>
+                    <td><span class="trunc" title="{{photo.contents.desc}}">{{photo.contents.desc}}</span></td>
+                  </tr>
+                </tbody>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="js/lib/angular.min.js"></script>
+  <script src="js/lib/carousel.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>

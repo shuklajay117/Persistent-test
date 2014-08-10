@@ -1,0 +1,195 @@
+/* app css stylesheet */
+
+html,body {
+  background: #848484; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg0ODQ4NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #848484 0%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#848484), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #848484 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #848484 0%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #848484 0%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #848484 0%,#ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#848484', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+  background-repeat: no-repeat;
+  font-size: 14px;
+  font-family: verdana,arial,sans-serif;
+}
+.main-container {
+  width:70%;
+  margin:0 auto;
+  background: #fff;
+  box-shadow: 0 0 2px black;
+  padding: 30px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  min-height: 600px;
+}
+
+.content-body {
+  margin: 30px;
+  position: relative;
+}
+
+.cur-hand {
+  cursor: pointer;
+}
+
+.prev {
+  border-bottom: 10px solid transparent;
+  border-right: 20px solid #808080;
+  border-top: 10px solid transparent;
+  height: 0;
+  left: -30px;
+  position: absolute;
+  top: 60px;
+  width: 0;
+}
+
+.next {
+  border-bottom: 10px solid transparent;
+  border-left: 20px solid #808080;
+  border-top: 10px solid transparent;
+  height: 0;
+  position: absolute;
+  right: -30px;
+  top: 60px;
+  width: 0;
+}
+
+.mrgn-rgt-15 {
+  margin-right: 15px;
+}
+.photo-carousel {
+width: 100%;
+height: 200px;
+}
+.photo-container {
+width: 100%;
+height: 140px;;
+}
+
+.img-desc-block {
+  padding: 10px;
+  background-color: #f3f3f3;
+  margin: 30px;
+}
+
+.margin-30 {
+  margin:30px;
+}
+
+.font-bigger {
+  font-size: 1.8em;
+}
+
+.font-smaller {
+  font-size: 0.9em;
+}
+
+.img-desc-txt {
+  font-size: 0.8em;
+  margin-top: 0;
+}
+
+.full-width {
+  width:100%;
+}
+
+.width-85per {
+  width:85%;
+}
+
+.desc-form {
+  width:50%;
+  color: #808080;
+  vertical-align: top;
+}
+
+.desc-table {
+  width:50%;
+  color: #808080;
+}
+
+.gallary-img {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 13px;
+}
+
+.gallary-img:hover , .img-selected {
+  border-bottom:3px solid orange;
+}
+
+.input-text {
+  border: 1px solid #d3d3d3;
+  padding: 7px;
+  color: #808080;
+}
+
+.heading-txt {
+  color:#808080;
+  font-weight: bold;
+}
+
+.update-btn {
+  background: none repeat scroll 0 0 #f5f5f5;
+  border: 1px solid #d3d3d3;
+  color: #808080;
+  font-weight: bold;
+  height: 30px;
+  width: 85px;
+}
+
+.gridtable {
+  border-collapse: collapse;
+  border:1px solid #d3d3d3;
+  width: 100%;
+}
+
+.gridtable thead tr td{
+  background-color: #e7e7e7;
+  padding: 15px 10px 15px 20px;
+
+}
+
+.gridtable tbody tr td{
+  border-bottom:1px solid #d3d3d3;
+  padding: 10px 10px 10px 20px;
+}
+
+.gridtable tbody tr td span.trunc {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 170px;
+}
+
+.vheading-txt {
+  text-align: right;
+}
+
+.v-top {
+  vertical-align: top;
+}
+
+.top-10 {
+  margin-top: 10px;
+}
+
+.table-desc-head {
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.table-desc-tarea { 
+  height: 100px;
+  resize: none;
+  width: 85%;
+  color: #808080;
+}
+
+.selected-row {
+  background-color: #f3f3f3;
+}
